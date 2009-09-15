@@ -1,0 +1,93 @@
+"  VimRC used by pctao@pcsh.org s8912@cs.nccu.edu.tw
+
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+set nolist
+set listchars=tab:>-,trail:-
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR> 
+map j jzz
+map k kzz
+set t_Co=256
+set t_Sf=[1;3%p1%dm
+set t_Sb=[1;4%p1%dm
+set wildmenu       " command-line completion operates in an enhanced mode
+set smarttab
+set ruler          " show the cursor position all the time
+set showcmd        " display incomplete commands
+set incsearch      " do incremental searching
+set hlsearch       " Also switch on highlighting the last used search pattern.
+set nocindent
+set smartindent
+set noexpandtab
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+" set dictionary=/usr/share/dict/words
+syntax on
+au FileType javascript so ~/.vim/syntax/javascript.vim
+au FileType javascript so ~/.vim/indent/javascript.vim
+au FileType php so ~/.vim/indent/php.vim
+
+if has("autocmd")
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+  autocmd FileType c,cpp call FT_C()
+  autocmd FileType java call FT_JAVA()
+  autocmd FileType php call FT_PHP()
+
+  function FT_COMMON()
+    set foldmethod=indent
+    set softtabstop=4
+    set shiftwidth=4
+    set tags=./tags,tags,../tags,~/workspace/tags
+    set formatoptions=tcqr
+  endfunction "FT_COMMON
+
+  function FT_PHP()
+    call FT_COMMON()
+    au FileType php so ~/.vim/indent/php.vim
+    inoremap <C-H> <ESC>:call PhpDocSingle()<CR>i
+    nnoremap <C-H> :call PhpDocSingle()<CR>
+    vnoremap <C-H> :call PhpDocRange()<CR> 
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType php set dictionary=~/tmp/a.txt
+  endfunction "FT_C
+
+  function FT_C()
+    call FT_COMMON()
+    abbr #b ************************************************************
+    "¥[¤j«¬µù¸Ñ¥Î, /#b ¥H¤Î #b/
+  endfunction "FT_C
+
+  function FT_JAVA()
+    call FT_COMMON()
+    compiler jikes
+  endfunction "FT_JAVA
+
+endif "has("autocmd")
+
+highlight Comment ctermfg=DarkCyan
+highlight SpecialKey ctermfg=Yellow
+highlight Normal guifg=#ffffff guibg=#000000
+highlight Search ctermfg=Black
+
+set background=dark
+
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,big5,latin1,enc-cn,gb2312
+set termencoding=utf-8
+set ffs=unix,dos
+set ff=unix
+
+if $TERM == "screen"
+set title
+set t_ts=k
+set t_fs=\
+auto BufEnter * :set title | let &titlestring = 'v:' . expand('%')
+auto VimLeave * :set notitle
+endif
+
+
+set secure
