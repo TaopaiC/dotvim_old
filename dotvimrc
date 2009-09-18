@@ -30,31 +30,43 @@ au FileType javascript so ~/.vim/syntax/javascript.vim
 au FileType javascript so ~/.vim/indent/javascript.vim
 au FileType php so ~/.vim/indent/php.vim
 
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType php set dictionary=~/tmp/a.txt
+if has("autocmd")
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+  autocmd FileType c,cpp call FT_C()
+  autocmd FileType java call FT_JAVA()
+  autocmd FileType php call FT_PHP()
 
-autocmd FileType text setlocal textwidth=78
-autocmd FileType c,cpp call FT_C()
-autocmd FileType php call FT_PHP()
+  function FT_COMMON()
+    set foldmethod=indent
+    set softtabstop=4
+    set shiftwidth=4
+    set tags=./tags,tags,../tags,~/workspace/tags
+    set formatoptions=tcqr
+  endfunction "FT_COMMON
 
-function FT_COMMON()
-  set foldmethod=indent
-  set tabstop=8
-  set shiftwidth=8
-  set tags=./tags,tags,../tags,~/workspace/tags
-  set formatoptions=tcqr
-endfunction "FT_COMMON
+  function FT_PHP()
+    call FT_COMMON()
+    au FileType php so ~/.vim/indent/php.vim
+    inoremap <C-H> <ESC>:call PhpDocSingle()<CR>i
+    nnoremap <C-H> :call PhpDocSingle()<CR>
+    vnoremap <C-H> :call PhpDocRange()<CR> 
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType php set dictionary=~/tmp/a.txt
+  endfunction "FT_C
 
-function FT_PHP()
-  call FT_COMMON()
-  au FileType php so ~/.vim/indent/php.vim
-endfunction "FT_C
+  function FT_C()
+    call FT_COMMON()
+    abbr #b ************************************************************
+    "加大型註解用, /#b 以及 #b/
+  endfunction "FT_C
 
-function FT_C()
-  call FT_COMMON()
-  abbr #b ************************************************************
-  "加大型註解用, /#b 以及 #b/
-endfunction "FT_C
+  function FT_JAVA()
+    call FT_COMMON()
+    compiler jikes
+  endfunction "FT_JAVA
+
+endif "has("autocmd")
 
 highlight Comment ctermfg=DarkCyan
 highlight SpecialKey ctermfg=Yellow
