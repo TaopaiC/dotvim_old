@@ -66,6 +66,7 @@ let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 " snipMate
 let g:snips_author = 'TaopaiC'
+let g:SuperTabMappingForward="\<C-m>"
 
 
 syntax on
@@ -88,9 +89,12 @@ if has("autocmd")
   autocmd FileType c,cpp call FT_C()
   autocmd FileType java call FT_JAVA()
   autocmd FileType php call FT_PHP()
+  autocmd FileType ruby call FT_COMMON()
+  autocmd FileType eruby call FT_COMMON()
 
   function FT_COMMON()
-    set foldmethod=indent
+"    set foldmethod=indent
+"    set foldlevelstart=99
     set softtabstop=4
     set shiftwidth=4
     set tags=./tags,tags,../tags,~/workspace/tags
@@ -119,6 +123,7 @@ if has("autocmd")
   endfunction "FT_JAVA
 
 endif "has("autocmd")
+autocmd FileType eruby      set ft=eruby.html
 
 set encoding=utf-8
 set fileencoding=utf-8
