@@ -51,7 +51,7 @@ endif
 
 let mapleader = "," 
 " NERDTree
-nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>d :NERDTree<CR>
 " Tlist
 let Tlist_Ctags_Cmd='~/bin/ctags'
 nnoremap <silent> <F3> :TlistToggle<CR>
