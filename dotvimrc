@@ -26,6 +26,7 @@ set nocindent
 set smartindent
 set smarttab
 set noexpandtab
+autocmd FileType make     set noexpandtab
 
 " Visual
 set nolist
@@ -34,21 +35,32 @@ set showmatch
 set mat=5
 set laststatus=2
 set wildmenu       " command-line completion operates in an enhanced mode
-"colorscheme wombat256
-set background=dark
-highlight Comment ctermfg=DarkCyan
-highlight SpecialKey ctermfg=Yellow
-highlight Normal guifg=#ffffff guibg=#000000
-highlight Search ctermfg=Black
+if $DISPLAY != ''
+colorscheme wombat256
+"colorscheme calmar256-light
+"colorscheme 256-jungle
+else
+	colorscheme default
+endif
+"set background=dark
+"highlight Comment ctermfg=DarkCyan
+"highlight SpecialKey ctermfg=Yellow
+"highlight Normal guifg=#ffffff guibg=#000000
+"highlight Search ctermfg=Black
 
 
+let mapleader = "," 
 " NERDTree
-nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
 " Tlist
 let Tlist_Ctags_Cmd='~/bin/ctags'
 nnoremap <silent> <F3> :TlistToggle<CR>
-"Fuz finder
+" Fuzzy Finder
 nnoremap <leader>t :FufFile<CR>
+nnoremap <leader>b :FufBuffer<CR>
+let g:fuzzy_ignore = "*.log"
+let g:fuzzy_matching_limit = 70
+
 
 syntax on
 au FileType javascript so ~/.vim/syntax/javascript.vim
