@@ -17,6 +17,10 @@ set showcmd        " display incomplete commands
 set backspace=indent,eol,start
 " set dictionary=/usr/share/dict/words
 
+" Key
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+
 " Search
 set incsearch      " do incremental searching
 set hlsearch       " Also switch on highlighting the last used search pattern.
@@ -60,6 +64,8 @@ nnoremap <leader>t :FufFile<CR>
 nnoremap <leader>b :FufBuffer<CR>
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
+" snipMate
+let g:snips_author = 'TaopaiC'
 
 
 syntax on
