@@ -4,31 +4,65 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-set nolist
-set listchars=tab:>-,trail:-
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR> 
 map j jzz
 map k kzz
 set t_Co=256
 set t_Sf=[1;3%p1%dm
 set t_Sb=[1;4%p1%dm
-set wildmenu       " command-line completion operates in an enhanced mode
-set smarttab
 set ruler          " show the cursor position all the time
 set nu
 set showcmd        " display incomplete commands
-set incsearch      " do incremental searching
-set hlsearch       " Also switch on highlighting the last used search pattern.
-set nocindent
-set smartindent
-set noexpandtab
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " set dictionary=/usr/share/dict/words
+
+" Search
+set incsearch      " do incremental searching
+set hlsearch       " Also switch on highlighting the last used search pattern.
+
+" Formatting
+set nocindent
+set smartindent
+set smarttab
+set noexpandtab
+
+" Visual
+set nolist
+set listchars=tab:>-,trail:-,eol:$,extends:>,precedes:<
+set showmatch
+set mat=5
+set laststatus=2
+set wildmenu       " command-line completion operates in an enhanced mode
+"colorscheme wombat256
+set background=dark
+highlight Comment ctermfg=DarkCyan
+highlight SpecialKey ctermfg=Yellow
+highlight Normal guifg=#ffffff guibg=#000000
+highlight Search ctermfg=Black
+
+
+" NERDTree
+nnoremap <silent> <F5> :NERDTreeToggle<CR>
+" Tlist
+let Tlist_Ctags_Cmd='~/bin/ctags'
+nnoremap <silent> <F3> :TlistToggle<CR>
+"Fuz finder
+nnoremap <leader>t :FufFile<CR>
+
 syntax on
 au FileType javascript so ~/.vim/syntax/javascript.vim
 au FileType javascript so ~/.vim/indent/javascript.vim
-au FileType php so ~/.vim/indent/php.vim
+
+setl omnifunc=nullcomplete#Complete
+autocmd FileType *          setl omnifunc=nullcomplete#Complete
+autocmd FileType python     setl omnifunc=pythoncomplete#Complete
+autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html       setl omnifunc=htmlcomplete#CompleteTags noci
+autocmd FileType css        setl omnifunc=csscomplete#CompleteCSS noci
+autocmd FileType xml        setl omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php        setl omnifunc=phpcomplete#CompletePHP
+autocmd FileType c          setl omnifunc=ccomplete#Complete
 
 if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
@@ -53,7 +87,7 @@ if has("autocmd")
     vnoremap <C-H> :call PhpDocRange()<CR> 
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType php set dictionary=~/tmp/a.txt
-  endfunction "FT_C
+  endfunction "FT_PHP
 
   function FT_C()
     call FT_COMMON()
@@ -67,13 +101,6 @@ if has("autocmd")
   endfunction "FT_JAVA
 
 endif "has("autocmd")
-
-highlight Comment ctermfg=DarkCyan
-highlight SpecialKey ctermfg=Yellow
-highlight Normal guifg=#ffffff guibg=#000000
-highlight Search ctermfg=Black
-
-set background=dark
 
 set encoding=utf-8
 set fileencoding=utf-8
