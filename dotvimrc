@@ -66,7 +66,8 @@ let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 " snipMate
 let g:snips_author = 'TaopaiC'
-let g:SuperTabMappingForward="\<C-m>"
+let g:SuperTabMappingForward="<tab>"
+
 
 
 syntax on
