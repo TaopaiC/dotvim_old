@@ -66,7 +66,7 @@ let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 " snipMate
 let g:snips_author = 'TaopaiC'
-let g:SuperTabMappingForward="\<C-m>"
+"let g:SuperTabMappingForward="\<C-m>"
 
 
 syntax on
@@ -86,11 +86,11 @@ autocmd FileType c          setl omnifunc=ccomplete#Complete
 if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-  autocmd FileType c,cpp call FT_C()
-  autocmd FileType java call FT_JAVA()
-  autocmd FileType php call FT_PHP()
-  autocmd FileType ruby call FT_COMMON()
-  autocmd FileType eruby call FT_COMMON()
+  autocmd FileType c,cpp  call FT_C()
+  autocmd FileType java   call FT_JAVA()
+  autocmd FileType php    call FT_PHP()
+  autocmd FileType ruby   call FT_RUBY()
+  autocmd FileType eruby  call FT_RUBY()
 
   function FT_COMMON()
 "    set foldmethod=indent
@@ -100,6 +100,13 @@ if has("autocmd")
     set tags=./tags,tags,../tags,~/workspace/tags
     set formatoptions=tcqr
   endfunction "FT_COMMON
+
+  function FT_RUBY()
+    call FT_COMMON()
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+  endfunction "FT_RUBY
 
   function FT_PHP()
     call FT_COMMON()
