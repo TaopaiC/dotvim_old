@@ -67,6 +67,8 @@ let g:fuzzy_matching_limit = 70
 " snipMate
 let g:snips_author = 'TaopaiC'
 let g:SuperTabMappingForward="<tab>"
+" matchit
+filetype plugin on
 
 syntax on
 au FileType javascript so ~/.vim/syntax/javascript.vim
@@ -145,6 +147,5 @@ set t_fs=\
 auto BufEnter * :set title | let &titlestring = 'v:' . expand('%')
 auto VimLeave * :set notitle
 endif
-
 
 set secure
