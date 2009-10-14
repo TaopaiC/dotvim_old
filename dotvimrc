@@ -20,6 +20,8 @@ set backspace=indent,eol,start
 " Key
 inoremap <M-o>       <Esc>o
 inoremap <C-j>       <Down>
+nnoremap <silent> <Leader>k mk:exe 'match Search /<Bslash>%'.line(".").'l/'<CR>
+
 
 " Search
 set incsearch      " do incremental searching
@@ -39,6 +41,7 @@ set showmatch
 set mat=5
 set laststatus=2
 set wildmenu       " command-line completion operates in an enhanced mode
+set cursorline
 if $DISPLAY != ''
 colorscheme wombat256
 "colorscheme calmar256-light
@@ -46,6 +49,7 @@ colorscheme wombat256
 else
 	colorscheme default
 endif
+colorscheme wombat256
 "set background=dark
 "highlight Comment ctermfg=DarkCyan
 "highlight SpecialKey ctermfg=Yellow
