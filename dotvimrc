@@ -42,6 +42,7 @@ set mat=5
 set laststatus=2
 set wildmenu       " command-line completion operates in an enhanced mode
 set cursorline
+set cursorcolumn
 if $DISPLAY != ''
 colorscheme wombat256
 "colorscheme calmar256-light
