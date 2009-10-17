@@ -10,6 +10,7 @@ map k kzz
 set t_Co=256
 set t_Sf=[1;3%p1%dm
 set t_Sb=[1;4%p1%dm
+set bs=2
 set ruler          " show the cursor position all the time
 set nu
 set showcmd        " display incomplete commands
