@@ -146,12 +146,23 @@ set termencoding=utf-8
 set ffs=unix,dos
 set ff=unix
 
-if $TERM == "screen"
-set title
-set t_ts=k
-set t_fs=\
-auto BufEnter * :set title | let &titlestring = 'v:' . expand('%')
-auto VimLeave * :set notitle
+let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
+if &term == "screen"
+	set t_ts=^[k
+	set t_fs=^[\
 endif
+if &term == "screen" || &term == "xterm" || &term == "xterm-256color"
+	set t_ts=^[k
+	set t_fs=^[\
+	set title
+endif
+
+"if $TERM == "screen"
+"set title
+"set t_ts=k
+"set t_fs=\
+"auto BufEnter * :set title | let &titlestring = 'v:' . expand('%')
+"auto VimLeave * :set notitle
+"endif
 
 set secure
