@@ -121,8 +121,8 @@ if has("autocmd")
 
   function FT_RUBY()
     call FT_COMMON()
-    set softtabstop=4
-    set shiftwidth=4
+    set softtabstop=2
+    set shiftwidth=2
     set expandtab
   endfunction "FT_RUBY
 
@@ -157,16 +157,16 @@ set termencoding=utf-8
 set ffs=unix,dos
 set ff=unix
 
-let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
-if &term == "screen"
-	set t_ts=^[k
-	set t_fs=^[\
-endif
-if &term == "screen" || &term == "xterm" || &term == "xterm-256color"
-	set t_ts=^[k
-	set t_fs=^[\
-	set title
-endif
+" let &titlestring = hostname() . "[vim(" . expand("%:t") . ")]"
+" if &term == "screen"
+" 	set t_ts=^[k
+" 	set t_fs=^[\
+" endif
+" if &term == "screen" || &term == "xterm" || &term == "xterm-256color"
+" 	set t_ts=^[k
+" 	set t_fs=^[\
+" 	set title
+" endif
 
 "if $TERM == "screen"
 "set title
