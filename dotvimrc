@@ -4,12 +4,28 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" http://vim.wikia.com/wiki/VimTip1576
+if &term =~ "xterm"
+  "256 color --
+  let &t_Co=256
+  " restore screen after quitting
+  set t_ti=ESC7ESC[rESC[?47h t_te=ESC[?47lESC8
+  if has("terminfo")
+    let &t_Sf="\ESC[3%p1%dm"
+    let &t_Sb="\ESC[4%p1%dm"
+  else
+    let &t_Sf="\ESC[3%dm"
+    let &t_Sb="\ESC[4%dm"
+  endif
+endif
+
+
 map ,e :e <C-R>=expand("%:p:h") . "/" <CR> 
 map j jzz
 map k kzz
-set t_Co=256
-set t_Sf=[1;3%p1%dm
-set t_Sb=[1;4%p1%dm
+"set t_Co=256
+"set t_Sf=[1;3%p1%dm
+"set t_Sb=[1;4%p1%dm
 set bs=2
 set ruler          " show the cursor position all the time
 set nu
@@ -59,10 +75,27 @@ colorscheme wombat256
 
 " StatusLine
 set laststatus=2
-set statusline=%4*%<\ %1*[%F]
-set statusline+=%4*\ %5*[%{&encoding}, " encoding
-set statusline+=%{&fileformat}]%m " file format
-set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+" http://vim.wikia.com/wiki/VimTip1573
+function! SyntaxItem()
+  return synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+if has('statusline')
+  set statusline=%#Question#                   " set highlighting
+  set statusline+=%-2.2n\                      " buffer number
+  set statusline+=%#WarningMsg#                " set highlighting
+  set statusline+=%f\                          " file name
+  set statusline+=%#Question#                  " set highlighting
+  set statusline+=%h%m%r%w\                    " flags
+  set statusline+=%{strlen(&ft)?&ft:'none'},   " file type
+  set statusline+=%{(&fenc==\"\"?&enc:&fenc)}, " encoding
+  set statusline+=%{((exists(\"+bomb\")\ &&\ &bomb)?\"B,\":\"\")} " BOM
+  set statusline+=%{&fileformat},              " file format
+  set statusline+=%{&spelllang},               " language of spelling checker
+  set statusline+=%{SyntaxItem()}              " syntax highlight group under cursor
+  set statusline+=%=                           " ident to the right
+  set statusline+=0x%-8B\                      " character code under cursor
+  set statusline+=%-7.(%l,%c%V%)\ %<%P         " cursor position/offset
+endif
 highlight User1 ctermfg=red
 highlight User2 term=underline cterm=underline ctermfg=green
 highlight User3 term=underline cterm=underline ctermfg=yellow
