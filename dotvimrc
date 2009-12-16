@@ -9,7 +9,7 @@ if &term =~ "xterm"
   "256 color --
   let &t_Co=256
   " restore screen after quitting
-  set t_ti=ESC7ESC[rESC[?47h t_te=ESC[?47lESC8
+  "set t_ti=ESC7ESC[rESC[?47h t_te=ESC[?47lESC8
   if has("terminfo")
     let &t_Sf="\ESC[3%p1%dm"
     let &t_Sb="\ESC[4%p1%dm"
@@ -119,6 +119,9 @@ let g:snips_author = 'TaopaiC'
 let g:SuperTabMappingForward="<C-n>"
 " matchit
 filetype plugin on
+" sparkup
+autocmd FileType html  source ~/.vim/scripts/sparkup.vim
+autocmd FileType eruby source ~/.vim/scripts/sparkup.vim
 
 syntax on
 au FileType javascript so ~/.vim/syntax/javascript.vim

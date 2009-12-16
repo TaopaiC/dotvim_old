@@ -1,0 +1,1 @@
+/home/staff/pctao/repo/sparkup/vim/sparkup.vim
