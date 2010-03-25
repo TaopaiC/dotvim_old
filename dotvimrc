@@ -6,6 +6,9 @@ set nocompatible
 
 " http://vim.wikia.com/wiki/VimTip1576
 if &term =~ "xterm"
+  set title
+  set t_ts=k
+  set t_fs=\
   "256 color --
   let &t_Co=256
   " restore screen after quitting
