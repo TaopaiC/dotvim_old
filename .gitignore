@@ -1,3 +1,4 @@
 *.swp
 home/.vim/doc/tags*
 home/.vim/GetLatest/Installed/*
+home/.vim/.netrwhist
