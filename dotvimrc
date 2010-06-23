@@ -125,6 +125,9 @@ filetype plugin on
 " sparkup
 autocmd FileType html  source ~/.vim/scripts/sparkup.vim
 autocmd FileType eruby source ~/.vim/scripts/sparkup.vim
+" rails
+command! Rroutes  :Redit  config/routes.rb
+command! RTroutes :RTedit config/routes.rb
 
 syntax on
 au FileType javascript so ~/.vim/syntax/javascript.vim
