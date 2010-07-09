@@ -151,6 +151,7 @@ if has("autocmd")
   autocmd FileType php    call FT_PHP()
   autocmd FileType ruby   call FT_RUBY()
   autocmd FileType eruby  call FT_RUBY()
+  autocmd FileType html   call FT_RUBY()
 
   function FT_COMMON()
 "    set foldmethod=indent
