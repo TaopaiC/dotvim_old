@@ -96,6 +96,7 @@ if has('statusline')
   set statusline+=%{&fileformat},              " file format
   set statusline+=%{&spelllang},               " language of spelling checker
   set statusline+=%{SyntaxItem()}              " syntax highlight group under cursor
+  set statusline+=%{(exists('g:loaded_rvm')?rvm#statusline():'')}  " rvm
   set statusline+=%=                           " ident to the right
   set statusline+=0x%-8B\                      " character code under cursor
   set statusline+=%-7.(%l,%c%V%)\ %<%P         " cursor position/offset
