@@ -136,15 +136,15 @@ syntax on
 au FileType javascript so ~/.vim/syntax/javascript.vim
 au FileType javascript so ~/.vim/indent/javascript.vim
 
-setl omnifunc=nullcomplete#Complete
-autocmd FileType *          setl omnifunc=nullcomplete#Complete
-autocmd FileType python     setl omnifunc=pythoncomplete#Complete
-autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html       setl omnifunc=htmlcomplete#CompleteTags noci
-autocmd FileType css        setl omnifunc=csscomplete#CompleteCSS noci
-autocmd FileType xml        setl omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php        setl omnifunc=phpcomplete#CompletePHP
-autocmd FileType c          setl omnifunc=ccomplete#Complete
+"setl omnifunc=nullcomplete#Complete
+"autocmd FileType *          setl omnifunc=nullcomplete#Complete
+"autocmd FileType python     setl omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html       setl omnifunc=htmlcomplete#CompleteTags noci
+"autocmd FileType css        setl omnifunc=csscomplete#CompleteCSS noci
+"autocmd FileType xml        setl omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType php        setl omnifunc=phpcomplete#CompletePHP
+"autocmd FileType c          setl omnifunc=ccomplete#Complete
 
 if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
