@@ -69,6 +69,13 @@ bundle/vim-fugitive:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
+bundle/vim-git: 
+  branch: master
+  remote: braid/bundle/vim-git
+  revision: 10a4fdb83f8bce3211e2e9202783575224d9ff85
+  squashed: true
+  type: git
+  url: git://github.com/tpope/vim-git.git
 bundle/vim-ragtag: 
   branch: master
   remote: braid/bundle/vim-ragtag
