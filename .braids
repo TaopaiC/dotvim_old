@@ -6,3 +6,10 @@ bundle/FuzzyFinder:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/FuzzyFinder.git
+bundle/The-NERD-tree: 
+  branch: master
+  remote: braid/bundle/The-NERD-tree
+  revision: 8b7004c20a18277a94261dc20ad3a45950265bc2
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/The-NERD-tree.git
