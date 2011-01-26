@@ -27,6 +27,13 @@ bundle/The-NERD-tree:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/The-NERD-tree.git
+bundle/dbext.vim: 
+  branch: master
+  remote: braid/bundle/dbext.vim
+  revision: 2c8a8090fbda836c8dbbf22f24af59e005f5d210
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/dbext.vim.git
 bundle/matchit.zip: 
   branch: master
   remote: braid/bundle/matchit.zip
