@@ -48,6 +48,13 @@ bundle/matchit.zip:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/matchit.zip.git
+bundle/rvm.vim: 
+  branch: master
+  remote: braid/bundle/rvm.vim
+  revision: 203f28c625348f3edce3af5073bd0105ab55d5bf
+  squashed: true
+  type: git
+  url: git://github.com/csexton/rvm.vim.git
 bundle/snipMate: 
   branch: master
   remote: braid/bundle/snipMate
