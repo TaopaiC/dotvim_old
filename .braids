@@ -41,6 +41,13 @@ bundle/dbext.vim:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/dbext.vim.git
+bundle/git-vim: 
+  branch: master
+  remote: braid/bundle/git-vim
+  revision: 74d01ae026092bc2fbf041227812e2a47c2ca7d8
+  squashed: true
+  type: git
+  url: git://github.com/motemen/git-vim.git
 bundle/matchit.zip: 
   branch: master
   remote: braid/bundle/matchit.zip
