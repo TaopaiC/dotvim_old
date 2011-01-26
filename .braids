@@ -97,6 +97,13 @@ bundle/vim-rails:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-rails.git
+bundle/vim-ruby: 
+  branch: master
+  remote: braid/bundle/vim-ruby
+  revision: 8ee9e43bfa1c7e9ef5f38060eded904f787e87bb
+  squashed: true
+  type: git
+  url: git://github.com/vim-ruby/vim-ruby.git
 bundle/vim-ruby-block-conv: 
   branch: master
   remote: braid/bundle/vim-ruby-block-conv
