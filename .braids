@@ -20,6 +20,13 @@ bundle/The-NERD-tree:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/The-NERD-tree.git
+bundle/vim-ragtag: 
+  branch: master
+  remote: braid/bundle/vim-ragtag
+  revision: a6190dec6b65c9129ac9c48f7984ad15a32d63ea
+  squashed: true
+  type: git
+  url: git://github.com/tpope/vim-ragtag.git
 bundle/vim-rails: 
   branch: master
   remote: braid/bundle/vim-rails
