@@ -6,6 +6,13 @@ bundle/FuzzyFinder:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/FuzzyFinder.git
+bundle/SuperTab: 
+  branch: master
+  remote: braid/bundle/SuperTab
+  revision: c7093c81b17b8fc8cfe6659348745b3b83991121
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/SuperTab.git
 bundle/The-NERD-tree: 
   branch: master
   remote: braid/bundle/The-NERD-tree
