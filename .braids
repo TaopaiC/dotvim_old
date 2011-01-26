@@ -27,6 +27,13 @@ bundle/The-NERD-tree:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/The-NERD-tree.git
+bundle/apidock.vim: 
+  branch: master
+  remote: braid/bundle/apidock.vim
+  revision: fa9d44e5c3a7263e2430f769432bd768479c672b
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/apidock.vim.git
 bundle/dbext.vim: 
   branch: master
   remote: braid/bundle/dbext.vim

@@ -1,0 +1,13 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2571
+
+This plugin allows you to browse APIdock's Ruby, Rails, and RSpec docs from within Vim. It will invoke Firefox from the command line, and open the query in a new tab.
+
+The plugin uses the command 'firefox', which it expects to be in your path, and executable from your shell. See 'Customization' below if you need some other behavior. (In particular, all of you OSX users will have to make a small change.) This should work out of the box on Ubuntu, and most other Linux-based systems on which Firefox is installed.
+
+Usage
+
+    *  RR - Search the Rails docs for the word under the cursor.
+    *  RB - Search the Ruby docs for the word under the cursor.
+    *  RS - Search the RSpec docs for the word under the cursor.
+
+More info, as well as the unstable, development version is available here: http://github.com/mileszs/apidock.vim/tree/master
