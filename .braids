@@ -13,3 +13,10 @@ bundle/The-NERD-tree:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/The-NERD-tree.git
+bundle/vim-rails: 
+  branch: master
+  remote: braid/bundle/vim-rails
+  revision: 0a55cda9e826bd601f0389a787595bfbf9987306
+  squashed: true
+  type: git
+  url: git://github.com/tpope/vim-rails.git
