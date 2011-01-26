@@ -1,0 +1,8 @@
+--- 
+bundle/FuzzyFinder: 
+  branch: master
+  remote: braid/bundle/FuzzyFinder
+  revision: b9f165970346df55862853dd83c8a4f2b2b70262
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/FuzzyFinder.git
