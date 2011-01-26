@@ -1,4 +1,11 @@
 --- 
+bundle/AutoComplPop: 
+  branch: master
+  remote: braid/bundle/AutoComplPop
+  revision: 0b075cf5e6ef05584ef6377e116e8d0fe1f8f788
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/AutoComplPop.git
 bundle/FuzzyFinder: 
   branch: master
   remote: braid/bundle/FuzzyFinder
