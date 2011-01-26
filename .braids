@@ -104,3 +104,10 @@ bundle/vim-ruby-block-conv:
   squashed: true
   type: git
   url: git://github.com/bronson/vim-ruby-block-conv.git
+bundle/vim-sparkup: 
+  branch: master
+  remote: braid/bundle/vim-sparkup
+  revision: 0d038a897307f53ca95e2eec2f4981f95241837e
+  squashed: true
+  type: git
+  url: git://github.com/kogakure/vim-sparkup.git
