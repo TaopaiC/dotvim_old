@@ -83,6 +83,13 @@ bundle/vim-git:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-git.git
+bundle/vim-jquery: 
+  branch: master
+  remote: braid/bundle/vim-jquery
+  revision: 1b791c9e5dbe34377ab5dc2f232118dac7d4047d
+  squashed: true
+  type: git
+  url: git://github.com/itspriddle/vim-jquery.git
 bundle/vim-ragtag: 
   branch: master
   remote: braid/bundle/vim-ragtag
